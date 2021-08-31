@@ -1,0 +1,25 @@
+{
+  "name": "sass_tutorial",
+  "version": "1.0.0",
+  "description": "Learn sass from The .Net Ninja",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BingFengHung/sass_tutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BingFengHung/sass_tutorial/issues"
+  },
+  "homepage": "https://github.com/BingFengHung/sass_tutorial#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.0.0",
+    "sass": "^1.38.2"
+  },
+  "dependencies": {}
+}
