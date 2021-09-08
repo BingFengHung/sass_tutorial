@@ -38,3 +38,17 @@ border-radius: math.div($base-border-radius, 4);
 ```
 
 @debug 可印出運算結果或是想要印的訊息
+
+## Maps
+Maps -> Key value pairs
+```scss
+$colors : (
+	"primary": $primary,
+	
+)
+```
+
+- map-get    取得值
+- map-has-key  是否有 key
+- map-remove  移除
+- map-merge  合併
