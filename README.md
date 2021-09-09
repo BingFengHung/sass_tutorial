@@ -52,3 +52,23 @@ $colors : (
 - map-has-key  是否有 key
 - map-remove  移除
 - map-merge  合併
+
+## loop
+使用 loop 主要有兩個關鍵字 `@each` 與 `@for`
+
+@each 主要使用於 map 的物件
+
+```scss
+@each $key, $val in $xxx {
+	// css rule
+}
+```
+
+for 的話就是使用於迭代
+```scss
+@for $i from 1 through 9 {
+	.text-#{$key}-dark-#{$i} {
+		// css rule
+	}
+}
+```
