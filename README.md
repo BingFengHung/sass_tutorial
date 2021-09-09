@@ -72,3 +72,15 @@ for 的話就是使用於迭代
 	}
 }
 ```
+## Conditional (@if)
+```scss
+@if ( 10>  5) {
+	.test-if {
+		color: black;
+	}
+} @else {
+	.test-if-2 {
+		color: white;
+	}
+}
+```
