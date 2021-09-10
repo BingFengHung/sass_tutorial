@@ -84,3 +84,32 @@ for 的話就是使用於迭代
 	}
 }
 ```
+
+## Parent Selector
+The parent selector, `&` is a special selector invented by Sass that's used in `nested selectors` to refer to the outer selector.
+
+```scss
+.alert {
+	&:hover {
+		font-weight: bold;
+	}
+}
+```
+
+在巢狀規則中使用，將外面的 selector 透過 & 串接起來
+
+```css
+.btn { ... }
+
+.btn_astralweb { ... }
+```
+
+改為 
+
+```scss
+.btn {
+	&_astralweb {
+		...
+	}
+}
+```
