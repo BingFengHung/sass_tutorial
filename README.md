@@ -113,3 +113,69 @@ The parent selector, `&` is a special selector invented by Sass that's used in `
 	}
 }
 ```
+
+## mixins & include
+mixins are a way for us to group together a bunch of css properties and values so that it can be included in many different css rules.
+
+mixins 可以讓具有相同屬性的部份抽離出來
+
+並且在有共用的 css selector 再用 include 的方式將其引入
+
+例如我可能有很多 button 的屬性都是一樣的，
+就可以將一樣的部分出離出來，變成 mixin 
+
+```scss
+@mixin btn() {
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+	border: 0;
+	padding: $base-padding $base-padding * 2;
+	border-radius: $base-border-radius;
+}
+```
+
+上面就是之後再要使用的地方
+
+```scss
+.btn {
+	@include btn()
+}
+```
+
+這樣即可
+
+
+注意到 btn 類似 function ，他可以帶入參數
+```scss
+@mixin btn($bg-color) {
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+	border: 0;
+	padding: $base-padding $base-padding * 2;
+	border-radius: $base-border-radius;
+	background-color: $bg-color;
+}
+```
+
+mixin 還可以讓函式的參數具有預設值
+
+```scss
+@mixin btn($bg-color: #e2e2e2) {
+	text-decoration: none;
+	cursor: pointer;
+	display: inline-block;
+	border: 0;
+	padding: $base-padding $base-padding * 2;
+	border-radius: $base-border-radius;
+	background-color: $bg-color;
+}
+```
+
+引入
+```scss
+.btn {
+	@include btn;  // 會直接使用 #e2e2e2 的預設值
+}
+```
