@@ -179,3 +179,17 @@ mixin 還可以讓函式的參數具有預設值
 	@include btn;  // 會直接使用 #e2e2e2 的預設值
 }
 ```
+
+## functions
+Function 與 mixin 很像，但是不同的是他只會`回傳單一的值`
+
+```scss
+@function light-comp($color) {
+	$complement: complement($color);  // 變數定義
+	$light-complement: lighten($complement, 30%);
+
+	@return $light-complement;
+}
+```
+
+使用 `@function` 定義 function，並使用 `@return` 將值回傳
