@@ -201,3 +201,34 @@ Function 與 mixin 很像，但是不同的是他只會`回傳單一的值`
 - opacity-40
 
 建立一些常用的輔助屬性
+
+## media query and @content
+When you making a website you often want it to be responsive.
+
+讓網頁 responsive 針對不同的螢幕尺寸，顯示適合的畫面給使用者看。
+
+@content的用途主要是拿來傳遞內容到 Mixin 裡面去的， 像是一般的Mixin 大家所認知的就是他能夠傳遞變數進去，
+
+ex.
+
+```scss
+@mixin bg($text-color, $bg-color) {
+	background: $bg-color;
+	color: $text-color;
+	@content;  // 加入 content
+}
+
+.box {
+	@include bg(#fff, #111) {
+		// 將額外的程式碼寫在 @include 中括號裡面
+		border: 1px solid lighten(#000, 10);  
+	}
+}
+
+// 編譯出來的 css
+.box {
+	background; #000;
+	color: #fff;
+	border: 1px solid #1a1a1a;  // 對應 @content 所放位置編譯於此
+}
+```
